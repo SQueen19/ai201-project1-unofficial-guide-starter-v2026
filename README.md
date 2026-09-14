@@ -22,11 +22,7 @@
 
 ## What This Does
 
-<!-- Three or four sentences. Which corpus you picked, and the kinds of
-     questions your system answers. Write it for someone who has never seen
-     this repo.
-
-     Milestone 5. -->
+I picked the `advice_threads` corpus. It is a set of question-and-answer threads about student life, so the system answers practical questions like commuting, housing, classes, roommates, and campus routines. The pipeline loads those threads, splits them into chunks, embeds them, and retrieves the most relevant pieces before generating an answer. For out-of-scope questions, the relevance gate stops the model instead of guessing.
 
 ## Chunking Strategy
 
@@ -108,18 +104,9 @@
 
 ## How I Used AI
 
-<!-- Two specific moments. For each: what you asked for, what came back, and
-     what you changed about it.
+**1.** I asked Copilot for a chunking strategy that would fit reply-heavy advice threads. It suggested a more general splitter, but I changed it to respect reply boundaries so each chunk keeps a complete answer together instead of cutting across unrelated replies.
 
-     "I asked Claude to write the chunking function from my notes. It ignored
-     the overlap, so I added that myself" is the level of detail we're after.
-     "I used AI to help me code" is not.
-
-     Milestone 5. -->
-
-**1.**
-
-**2.**
+**2.** I asked Copilot to help me write the README explanation for the project and to check the Windows setup instructions when `test.py` failed. It helped me identify that the fix was activating the virtual environment in PowerShell, and I kept the final wording focused on the actual behavior I observed.
 
 <!-- ── Stretch features ─────────────────────────────────────────────────────
      Doing one? Say so here BEFORE you start. A feature this README never
