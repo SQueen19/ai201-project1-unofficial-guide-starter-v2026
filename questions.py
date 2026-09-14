@@ -12,6 +12,7 @@ correct answer to contain — you'll use it in week 2 when you build a scorer,
 and having written it now means you decided what "correct" meant before you saw
 any results.
 
+
 `OUT_OF_SCOPE` holds five questions your documents clearly don't cover. You
 need these in Milestone 4 to find where your relevance cutoff belongs, and
 again in week 2, where `run_eval.py` runs them through the gate and writes what
@@ -23,11 +24,11 @@ names a target of "4 of 5", and four of three is not a thing.
 
 QUESTIONS = [
     # {"question": "...", "expects": "..."},
-    {"question": "", "expects": ""},
-    {"question": "", "expects": ""},
-    {"question": "", "expects": ""},
-    {"question": "", "expects": ""},
-    {"question": "", "expects": ""},
+    {"question": "How often are students late to classes", "expects": "moderately"},
+    {"question": "What is the typical wait time for a bus at the main stop?", "expects": "10-15 minutes"},
+    {"question": "How many hours per week do students spend studying?", "expects": "10-15 hours"},
+    {"question": "What is the average GPA of students in the Computer Science program?", "expects": "3.0-3.5"},
+    {"question": "How often are the library hours extended during finals week?", "expects": "daily"},
 ]
 
 # Questions from a different world entirely. Your gate should refuse all five.

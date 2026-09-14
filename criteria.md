@@ -55,12 +55,11 @@ in at least 4 of 5 tries.
 
 ---
 
-## 4. Something about your chunks
+## 4. Sampled chunks
 
 <!-- YOU WRITE THIS ONE.
 
-     How would you know if your chunks were the right size? Name something
-     countable or observable.
+     How long to students stay on campus for finals weel
 
      Examples of the right shape — don't copy these, they should come from
      what you actually saw in Milestone 3:
@@ -77,7 +76,7 @@ in at least 4 of 5 tries.
 
 ---
 
-## 5. Your choice
+## 5. Correctness
 
 <!-- YOU WRITE THIS ONE TOO.
 
