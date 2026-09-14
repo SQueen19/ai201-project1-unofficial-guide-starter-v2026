@@ -23,6 +23,7 @@ your pipeline, not giving up.
 """
 
 from dataclasses import dataclass
+import re
 
 import config
 from ingest import Document
@@ -97,7 +98,27 @@ def split_documents(documents: list[Document]) -> list[Chunk]:
       - Would splitting on paragraph breaks keep more thoughts intact than
         splitting on a character count?
     """
-    return fallback_split(documents)
+    reply_heading = re.compile(r"(?m)^\s*---\s*reply\s+\d+\s*\([^)]*\)\s*---\s*$")
+
+    chunks: list[Chunk] = []
+    for doc in documents:
+        if reply_heading.search(doc.text):
+            parts = reply_heading.split(doc.text)
+            blocks = [part.strip() for part in parts[1:] if part.strip()]
+        else:
+            blocks = [part.strip() for part in re.split(r"\n\s*\n+", doc.text) if part.strip()]
+
+        for index, block in enumerate(blocks):
+            chunks.append(
+                Chunk(
+                    text=block,
+                    source=doc.source,
+                    index=index,
+                    produced_by="chunker.py::split_documents",
+                )
+            )
+
+    return chunks
 
 
 def describe(chunks: list[Chunk]) -> str:
